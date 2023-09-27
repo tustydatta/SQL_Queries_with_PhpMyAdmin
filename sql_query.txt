@@ -1,0 +1,50 @@
+02
+//create database..
+CREATE DATABASE valvee; 
+
+//delete database..
+DROP DATABASE valvee; 
+
+03
+//create table..
+CREATE TABLE customers(
+	id INT NOT NULL AUTO INCREMENT,
+	firstName VARCHAR(255),
+	lastName VARCHAR(255),
+	address VARCHAR(255),
+	email VARCHAR(255),
+	city VARCHAR(255),
+	division VARCHAR(255),
+	zipcode VARCHAR(255),
+	PRIMARY KEY(id)
+);
+
+04
+//insert data..
+INSERT INTO customers(firstName, lastName, address, email, city, division, zipcode) VALUES
+('Tusty', 'Datta', 'Cumilla', 'tustydatta9@gmail.com', 'Cumilla', 'Chittagong', '1234');
+
+05
+//update data..
+UPDATE customers SET email = 'tusty@yehoo.com' WHERE id = 1;
+
+06
+//delete data..
+DELETE FROM customers WHERE id = 3;
+
+07
+//alter table..
+ALTER TABLE customers ADD newCol VARCHAR(255);
+ALTER TABLE customers MODIFY COLUMN newCol INT(11);
+ALTER TABLE customers DROP COLUMN newCol;
+
+08
+//select data..
+SELECT * FROM customers LIMIT 3;
+SELECT * FROM customers LIMIT 2, 2;
+SELECT firstName, lastName FROM customers;
+SELECT * FROM customers WHERE id = 4;
+SELECT * FROM customers ORDER BY lastName;
+SELECT * FROM customers ORDER BY lastName DESC / ASC;
+SELECT city FROM customers;
+SELECT DISTINCT city FROM customers; ...//display unic name...
